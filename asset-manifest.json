@@ -1,19 +1,17 @@
 {
   "files": {
-    "main.css": "/donation-themed/static/css/main.3c1f9dda.css",
-    "main.js": "/donation-themed/static/js/main.a71eeed2.js",
-    "static/js/787.d8f9f841.chunk.js": "/donation-themed/static/js/787.d8f9f841.chunk.js",
+    "main.css": "/donation-themed/static/css/main.72b3d956.css",
+    "main.js": "/donation-themed/static/js/main.172383e9.js",
     "static/media/KoreanKRSM.ttf": "/donation-themed/static/media/KoreanKRSM.7284845a34ebf8a89dc6.ttf",
     "static/media/KoreanKRSM.woff": "/donation-themed/static/media/KoreanKRSM.8fdd6f2fc8cbec2956b7.woff",
     "static/media/avatar.png": "/donation-themed/static/media/avatar.01e6e31a1d9de222ff40.png",
     "static/media/box.png": "/donation-themed/static/media/box.5d71360e4daa0e46c38d.png",
     "index.html": "/donation-themed/index.html",
-    "main.3c1f9dda.css.map": "/donation-themed/static/css/main.3c1f9dda.css.map",
-    "main.a71eeed2.js.map": "/donation-themed/static/js/main.a71eeed2.js.map",
-    "787.d8f9f841.chunk.js.map": "/donation-themed/static/js/787.d8f9f841.chunk.js.map"
+    "main.72b3d956.css.map": "/donation-themed/static/css/main.72b3d956.css.map",
+    "main.172383e9.js.map": "/donation-themed/static/js/main.172383e9.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c1f9dda.css",
-    "static/js/main.a71eeed2.js"
+    "static/css/main.72b3d956.css",
+    "static/js/main.172383e9.js"
   ]
 }
