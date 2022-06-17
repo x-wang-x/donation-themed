@@ -14,30 +14,50 @@
   font-family: "KoreanKRSM"; /*Can be any text*/
   src: local("KoreanKRSM"), url("./fonts/KoreanKRSM.woff") format("woff");
 }
-@keyframes slideInFromLeft {
+@keyframes fadeOUT {
   0% {
-    opacity: 0;
-    transform-origin: left;
-    transform: scale(0.7);
-  }
-  40% {
-    transform: scale(1);
+    width: 100%;
     opacity: 1;
-    
+  }
+  100% {
+    transform-origin: left;
+    width: 0;
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes fadeIN {
+  0% {
+    width: 0;
+    opacity: 0;
+    transform: scale(0);
   }
   80% {
+    transform-origin: left;
+    width: 100%;
+    opacity: 1;
+    transform: scale(1);
+    
+  }
+  100% {
     transform: rotate(-2deg);
   }
 }
 @keyframes shake {
-  0% { transform: translate(-1px, -2px) rotate(0deg); }
-  50% { transform: translate(1px, -2px) rotate(-1deg); }
-  100% { transform: translate(-1px, 2px) rotate(1deg); }
+  0% {
+    transform: translate(-1px, -2px) rotate(0deg);
+  }
+  50% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(-1px, 2px) rotate(1deg);
+  }
 }
-.oke {
+/* .oke {
   position: absolute;
   animation: 1s linear 0s 1 slideInFromLeft;
-}
+} */
 .container {
   width: 1223px;
   height: 344px;
@@ -90,9 +110,20 @@ img.avatar {
 img.Box {
   max-width: 1223px;
   max-height: 344px;
+  transition: rotate 1s linear;
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
 .avatar {
   max-width: 400px;
+}
+.open {
+  visibility: visible;
+  opacity: 1;
+  animation: fadeIN 1s;
+}
+.close {
+  animation: fadeOUT 1s;
+  visibility: hidden;
+  transition: visibility 1s linear;
 }

@@ -3,9 +3,10 @@ import { w3cwebsocket as W3CWebSocket } from "websocket";
 import Box from "./Box";
 function App() {
   const [count, setCount] = useState({ name: "asolole", value: "asik" });
-  const [style,setStyle] = useState({
-    display: "none"
-  })
+  // const [style,setStyle] = useState({
+  //   display: "none"
+  // })
+  const [show,setShow] = useState('close')
   useEffect(() => {
     const client = new W3CWebSocket("wss://sociabuzz.com:8283");
     var data = {
@@ -29,20 +30,18 @@ function App() {
           name: json.fullname,
           value: json.note,
         });
-        setStyle({
-          display: "block",
-        })
+        setShow('open');
         setTimeout(function () {
-          setStyle({
-            display: "none",
-          });
+          setShow('close');
         }, 10000);
       }}
     },[]);
 
     return (
-      <div className="oke" style={style}>
-        <Box message={count} />
+      <div className="oke" >
+        <button onClick={()=>setShow('close')} >OK</button>
+        <button onClick={()=>setShow('open')} >OYE</button>
+        <div className={show}><Box message={count} /></div>
       </div>
     );
 }
