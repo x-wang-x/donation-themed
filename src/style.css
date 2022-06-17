@@ -1,0 +1,98 @@
+/* @font-face {
+  font-family: "KoreanKRSM";
+  src: url("./fonts/KoreanKRSM.eot");
+  src: url("./fonts/KoreanKRSM.eot?#iefix") format("embedded-opentype"),
+    url("./style/fonts/KoreanKRSM.woff2") format("woff2"),
+    url("./style/fonts/KoreanKRSM.woff") format("woff"),
+    url("./style/fonts/KoreanKRSM.ttf") format("truetype"),
+    url("./style/fonts/KoreanKRSM.svg#KoreanKRSM") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} */
+@font-face {
+  font-family: "KoreanKRSM"; /*Can be any text*/
+  src: local("KoreanKRSM"), url("./fonts/KoreanKRSM.woff") format("woff");
+}
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform-origin: left;
+    transform: scale(0.7);
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+    
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+}
+@keyframes shake {
+  0% { transform: translate(-1px, -2px) rotate(0deg); }
+  50% { transform: translate(1px, -2px) rotate(-1deg); }
+  100% { transform: translate(-1px, 2px) rotate(1deg); }
+}
+.oke {
+  position: absolute;
+  animation: 1s linear 0s 1 slideInFromLeft;
+}
+.container {
+  width: 1223px;
+  height: 344px;
+  position: relative;
+  text-align: center;
+  color: white;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+.row {
+  border-style: solid;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+.first-txt {
+  font-family: "KoreanKRSM";
+  font-size: 25px;
+  text-shadow: 3px 3px black;
+
+  word-wrap: break-word;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  bottom: 230px;
+  left: 210px;
+  width: 750px;
+  height: 100px;
+  /*border-style: solid;*/
+}
+.rotate {
+  width: 250px;
+  position: relative;
+  left: 130px;
+  bottom: 290px;
+  font-family: "KoreanKRSM";
+  overflow: hidden;
+  font-size: 25px;
+  color: black;
+  text-shadow: 1px 1px grey;
+  writing-mode: horizontal-tb;
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-107deg);
+  /*border-style: solid;*/
+}
+img.avatar {
+  width: 600px;
+  max-width: 600px;
+  max-height: 450px;
+}
+img.Box {
+  max-width: 1223px;
+  max-height: 344px;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+.avatar {
+  max-width: 400px;
+}
