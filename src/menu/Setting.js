@@ -15,19 +15,16 @@ function deleteItems() {
   localStorage.clear();
 }
 const Setting = () => {
-  const [data, setData] = useLocalStorage("data", { id: 0 });
+  const [data, setData] = useLocalStorage("data", { id: 0, timeout: 120000 });
   const handleToggle = (e) => {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
-    // console.log(name + value);
-    let updatedValue = {};
     setData((prevState) => {
-      return { [name]: value };
+      return { ...prevState, [name]: value };
     });
     // console.log(updatedValue);
   };
-  console.log(data.id);
   return (
     <div>
       <form>
@@ -40,6 +37,17 @@ const Setting = () => {
             }}
             value={data.id}
             name="id"
+          ></input>
+        </label>
+        <label>
+          Timeout :{" "}
+          <input
+            type="text"
+            onChange={(e) => {
+              handleToggle(e);
+            }}
+            value={data.timeout}
+            name="timeout"
           ></input>
         </label>
       </form>
