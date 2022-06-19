@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/donation-themed/static/css/main.784d5941.css",
-    "main.js": "/donation-themed/static/js/main.4cd86bfb.js",
+    "main.js": "/donation-themed/static/js/main.274f266c.js",
     "static/media/KoreanKRSM.ttf": "/donation-themed/static/media/KoreanKRSM.7284845a34ebf8a89dc6.ttf",
     "static/media/KoreanKRSM.woff": "/donation-themed/static/media/KoreanKRSM.8fdd6f2fc8cbec2956b7.woff",
     "static/media/avatar.png": "/donation-themed/static/media/avatar.01e6e31a1d9de222ff40.png",
     "static/media/box.png": "/donation-themed/static/media/box.5d71360e4daa0e46c38d.png",
     "index.html": "/donation-themed/index.html",
     "main.784d5941.css.map": "/donation-themed/static/css/main.784d5941.css.map",
-    "main.4cd86bfb.js.map": "/donation-themed/static/js/main.4cd86bfb.js.map"
+    "main.274f266c.js.map": "/donation-themed/static/js/main.274f266c.js.map"
   },
   "entrypoints": [
     "static/css/main.784d5941.css",
-    "static/js/main.4cd86bfb.js"
+    "static/js/main.274f266c.js"
   ]
 }
