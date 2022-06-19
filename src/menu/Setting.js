@@ -1,16 +1,16 @@
 import React from "react";
 
 const useLocalStorage = (storageKey, fallbackState) => {
-    const [value, setValue] = React.useState(
-      JSON.parse(localStorage.getItem(storageKey)) ?? fallbackState
-    );
-  
-    React.useEffect(() => {
-      localStorage.setItem(storageKey, JSON.stringify(value));
-    }, [value, storageKey]);
-  
-    return [value, setValue];
-  };
+  const [value, setValue] = React.useState(
+    JSON.parse(localStorage.getItem(storageKey)) ?? fallbackState
+  );
+
+  React.useEffect(() => {
+    localStorage.setItem(storageKey, JSON.stringify(value));
+  }, [value, storageKey]);
+
+  return [value, setValue];
+};
 function deleteItems() {
   localStorage.clear();
 }
@@ -28,6 +28,17 @@ const Setting = () => {
   return (
     <div>
       <form>
+        <label>Source : </label>
+        <select
+          name="backend"
+          value={data.backend}
+          onChange={(e) => {
+            handleToggle(e);
+          }}
+        >
+          <option value="socialbuzz">socialbuzz</option>
+          <option value="none">-</option>
+        </select>
         <label>
           ID :{" "}
           <input
@@ -51,7 +62,7 @@ const Setting = () => {
           ></input>
         </label>
         <label>
-          Text-to-Speech : {" "}
+          Text-to-Speech :{" "}
           <input
             type="checkbox"
             onChange={(e) => {
@@ -61,8 +72,9 @@ const Setting = () => {
             name="tts"
           ></input>
         </label>
+        <br></br>
         <label>
-          Notif Sound : {" "}
+          Notif Sound :{" "}
           <input
             type="checkbox"
             onChange={(e) => {
@@ -73,7 +85,7 @@ const Setting = () => {
           ></input>
         </label>
       </form>
-      <button onClick={deleteItems}>clear</button>
+      <button onClick={deleteItems}>Clear All Setting</button>
     </div>
   );
 };
