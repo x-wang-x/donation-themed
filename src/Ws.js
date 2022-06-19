@@ -12,7 +12,7 @@ export class Ws extends Component {
       value: "asik",
       isShow: true,
       isShowSetting: false,
-      dataFromServer: {}
+      dataFromServer: {},
     };
   }
   ws = new WebSocket(ws_url); //initiate ws
@@ -36,14 +36,32 @@ export class Ws extends Component {
       this.setState({ dataFromServer: message });
 
       if (message.message === "notif" || message.message === "test") {
-        delete message["tts"];
         console.log(message);
         this.setState({
           name: message.fullname,
           value: message.note,
         });
-        this.setState({isShow: true});
-        setTimeout(()=>this.setState({isShow: false}), dataclient.timeout);
+        this.setState({ isShow: true });
+        if (dataclient.tts && dataclient.notif) {
+          //notif and tts on
+          console.log();
+          const suara = [
+            new Audio(
+              "https://sociabuzz.s3.ap-southeast-1.amazonaws.com//files/profile/influencer/wang/1655282891-arigato_dattebayo .mp3"
+            ),
+            new Audio("data:audio/wav;base64," + message.tts),
+          ];
+          this.playSound(suara);
+        } else if (dataclient.tts) {
+          this.playSound([new Audio("data:audio/wav;base64," + message.tts)]);
+        } else if (dataclient.notif) {
+          this.playSound([
+            new Audio(
+              "https://sociabuzz.s3.ap-southeast-1.amazonaws.com//files/profile/influencer/wang/1655282891-arigato_dattebayo .mp3"
+            ),
+          ]);
+        }
+        setTimeout(() => this.setState({ isShow: false }), dataclient.timeout);
       }
     };
   }
@@ -71,6 +89,21 @@ export class Ws extends Component {
       }
     }
   }
+  playSound(audio) {
+    var i = 0;
+    while (i < audio.length) {
+      console.log("Playing : " + i);
+      audio[i].play();
+      setTimeout(() => {
+        console.log(audio[i])
+        if (typeof audio[i] != "undefined") {
+          audio[i].pause();
+          audio[i].currentTime = 0;
+        }
+      }, dataclient.timeout);
+      i++;
+    }
+  }
 
   componentDidMount() {
     this.openConnection();
@@ -95,6 +128,7 @@ export class Ws extends Component {
             Setting
           </button>
           <button onClick={() => this.closeConnection()}> Close WS</button>
+          <button onClick={() => window.location.reload()}>Refresh</button>;
         </div>
         <div className={this.state.isShow ? "open" : "close"}>
           <Box message={this.state} />

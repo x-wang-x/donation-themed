@@ -50,6 +50,28 @@ const Setting = () => {
             name="timeout"
           ></input>
         </label>
+        <label>
+          Text-to-Speech : {" "}
+          <input
+            type="checkbox"
+            onChange={(e) => {
+              handleToggle(e);
+            }}
+            checked={data.tts}
+            name="tts"
+          ></input>
+        </label>
+        <label>
+          Notif Sound : {" "}
+          <input
+            type="checkbox"
+            onChange={(e) => {
+              handleToggle(e);
+            }}
+            checked={data.notif}
+            name="notif"
+          ></input>
+        </label>
       </form>
       <button onClick={deleteItems}>clear</button>
     </div>
