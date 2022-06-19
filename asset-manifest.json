@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/donation-themed/static/css/main.595bc430.css",
-    "main.js": "/donation-themed/static/js/main.43140914.js",
+    "main.css": "/donation-themed/static/css/main.416fa2be.css",
+    "main.js": "/donation-themed/static/js/main.08308600.js",
     "static/media/KoreanKRSM.ttf": "/donation-themed/static/media/KoreanKRSM.7284845a34ebf8a89dc6.ttf",
     "static/media/KoreanKRSM.woff": "/donation-themed/static/media/KoreanKRSM.8fdd6f2fc8cbec2956b7.woff",
     "static/media/avatar.png": "/donation-themed/static/media/avatar.01e6e31a1d9de222ff40.png",
     "static/media/box.png": "/donation-themed/static/media/box.5d71360e4daa0e46c38d.png",
     "index.html": "/donation-themed/index.html",
-    "main.595bc430.css.map": "/donation-themed/static/css/main.595bc430.css.map",
-    "main.43140914.js.map": "/donation-themed/static/js/main.43140914.js.map"
+    "main.416fa2be.css.map": "/donation-themed/static/css/main.416fa2be.css.map",
+    "main.08308600.js.map": "/donation-themed/static/js/main.08308600.js.map"
   },
   "entrypoints": [
-    "static/css/main.595bc430.css",
-    "static/js/main.43140914.js"
+    "static/css/main.416fa2be.css",
+    "static/js/main.08308600.js"
   ]
 }
